@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="#" th:action="@{/search}" th:object="${person}" method="post">
+
+    <p> First name: <input type="text" th:field="*{firstName}"/></p>
+    <div style="color:red" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"> Name Error</div>
+
+    <p>Last name: <input type="text" th:field="*{lastName}" /></p>
+
+    <div style="color:red" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Name Error</div>
+    <p>
+        <input type="submit" value="Search" />
+        <input type="reset" value="Reset" />
+    </p>
+
+    <a href="/person"> Go Back </a>
+</form>
+</body>
+</html>
