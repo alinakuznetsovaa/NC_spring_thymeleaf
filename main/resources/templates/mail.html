@@ -14,8 +14,6 @@
 
     <p>Recipient: <input type="text" th:field="*{recipient}" id="recipient" /></p>
     <div style="color:red" th:if="${#fields.hasErrors('recipient')}" th:errors="*{recipient}">Email error</div>
-
-
     <p>Subject: <input type="text" th:field="*{subject}" /></p>
     <p>Message: <input type="text" th:field="*{message}"/></p>
     <p><input type="submit" value="Send"/>

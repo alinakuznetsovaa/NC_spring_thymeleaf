@@ -56,10 +56,14 @@ public class PersonController {
     }
 
     @PostMapping("/search")
-    public String searchPerson(@ModelAttribute("information") Information information, @ModelAttribute("person") @Valid Person person, Errors errors, Model model, HttpServletRequest request ) throws IOException  {
+    public String searchPerson(@ModelAttribute("information") Information information,
+                               @ModelAttribute("person") @Valid Person person,
+                               Errors errors,
+                               Model model,
+                               HttpServletRequest request ) throws IOException  {
 
 
-        if (errors.hasErrors())
+        if (errors.hasFieldErrors("firstName") || errors.hasFieldErrors("lastName"))
             return "search";
 
         information.setMessage(request);
