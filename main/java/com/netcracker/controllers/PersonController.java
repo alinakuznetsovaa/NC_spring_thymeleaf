@@ -32,8 +32,7 @@ public class PersonController {
                                Errors errors, Model model) throws IOException {
         if (errors.hasErrors())
             return "person";
-//        personParser.addPerson(person);
-//        model.addAttribute("peers",personParser.getPeers());
+
         FileWriter file = new FileWriter("people.txt", true);
         file.write(person.getFirstName() + " " + person.getLastName() + " " + person.getAge() + " "  + person.getSalary() + " " + person.getEmail() + " " + person.getWorkPlace() + '\n');
         file.flush();

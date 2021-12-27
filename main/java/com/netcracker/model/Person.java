@@ -47,13 +47,12 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person { " +
-                firstName+" "
+        return firstName+" "
                 +lastName+" "
                 +age+" "
-                +workPlace+" "
                 +salary+" "
-                +email+" }";
+                +email + " "
+                + workPlace;
     }
 
     public String getFirstName() {
